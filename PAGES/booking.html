@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Tour - Tamil Nadu Tours</title>
+    <meta name="description" content="Book your perfect Tamil Nadu tour - Customizable packages for every traveler">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="../IMG/logo.png" alt="Tamil Nadu Tours">
+                    TN Tours
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#destinations">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html" class="active">Book Now</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </button>
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <a href="booking.html" class="btn">Plan Your Trip</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Book Your Tour</h1>
+            <p>Plan your perfect Tamil Nadu adventure</p>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <form class="booking-form" id="bookingForm">
+                <div class="form-grid">
+                    <h3 class="section-heading"><span class="icon">👤</span> Personal Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <h3 class="section-heading"><span class="icon">🚐</span> Travel Details</h3>
+                    
+                    <div class="form-group">
+                        <label for="pickupLocation">Pickup Location</label>
+                        <select id="pickupLocation" name="pickupLocation" required>
+                            <option value="">Select Pickup Location</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="coimbatore">Coimbatore</option>
+                            <option value="madurai">Madurai</option>
+                            <option value="trichy">Trichy</option>
+                            <option value="salem">Salem</option>
+                            <option value="tirunelveli">Tirunelveli</option>
+                            <option value="vellore">Vellore</option>
+                            <option value="thanjavur">Thanjavur</option>
+                            <option value="dindigul">Dindigul</option>
+                            <option value="tiruppur">Tiruppur</option>
+                            <option value="erode">Erode</option>
+                            <option value="nagapattinam">Nagapattinam</option>
+                            <option value="namakkal">Namakkal</option>
+                            <option value="karur">Karur</option>
+                            <option value="virudhunagar">Virudhunagar</option>
+                            <option value="ramanathapuram">Ramanathapuram</option>
+                            <option value="theni">Theni</option>
+                            <option value="kanyakumari">Kanyakumari</option>
+                            <option value="pondicherry">Pondicherry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="otherLocationGroup" style="display: none;">
+                        <label for="otherLocation">Enter Pickup Location</label>
+                        <input type="text" id="otherLocation" name="otherLocation" placeholder="Enter your city name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pickupAddress">Pickup Address</label>
+                        <textarea id="pickupAddress" name="pickupAddress" rows="2" placeholder="Enter full pickup address" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="distance">Distance (KM) - One Way</label>
+                        <input type="number" id="distance" name="distance" min="1" placeholder="Auto-calculated" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" max="50" placeholder="Enter number of guests" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <h3 class="section-heading"><span class="icon">📍</span> Destination & Dates</h3>
+                    
+                    <div class="form-group full-width">
+                        <label>Select Destination</label>
+                        <div class="selection-grid" id="locationSelect">
+                            <div class="selection-card" data-value="madurai">
+                                <span class="icon">🛕</span>
+                                <h4>Madurai</h4>
+                                <p>Meenakshi Temple</p>
+                            </div>
+                            <div class="selection-card" data-value="thanjavur">
+                                <span class="icon">🗿</span>
+                                <h4>Thanjavur</h4>
+                                <p>Chola Temples</p>
+                            </div>
+                            <div class="selection-card" data-value="rameshwaram">
+                                <span class="icon">🕉️</span>
+                                <h4>Rameshwaram</h4>
+                                <p>Lord Rama Temple</p>
+                            </div>
+                            <div class="selection-card" data-value="kanyakumari">
+                                <span class="icon">🌊</span>
+                                <h4>Kanyakumari</h4>
+                                <p>3 Seas Meet</p>
+                            </div>
+                            <div class="selection-card" data-value="pondicherry">
+                                <span class="icon">🏖️</span>
+                                <h4>Pondicherry</h4>
+                                <p>French Riviera</p>
+                            </div>
+                            <div class="selection-card" data-value="mahabalipuram">
+                                <span class="icon">🗿</span>
+                                <h4>Mahabalipuram</h4>
+                                <p>Rock Cut Temples</p>
+                            </div>
+                            <div class="selection-card" data-value="ooty">
+                                <span class="icon">🏔️</span>
+                                <h4>Ooty</h4>
+                                <p>Queen of Hills</p>
+                            </div>
+                            <div class="selection-card" data-value="kodaikanal">
+                                <span class="icon">🌲</span>
+                                <h4>Kodaikanal</h4>
+                                <p>Pristine Lakes</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date</label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date</label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <h3 class="section-heading"><span class="icon">🚌</span> Accommodation & Transport</h3>
+                    
+                    <div class="form-group full-width">
+                        <label>Select Hotel Type</label>
+                        <div class="selection-grid" id="hotelSelect">
+                            <div class="selection-card" data-value="standard">
+                                <span class="icon">🏨</span>
+                                <h4>Standard</h4>
+                            </div>
+                            <div class="selection-card" data-value="3star">
+                                <span class="icon">⭐</span>
+                                <h4>Star Hotel</h4>
+                            </div>
+                            <div class="selection-card" data-value="resort">
+                                <span class="icon">🏝️</span>
+                                <h4>Resort</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Select Food Type</label>
+                        <div class="selection-grid" id="foodSelect">
+                            <div class="selection-card" data-value="veg">
+                                <span class="icon">🥬</span>
+                                <h4>Veg</h4>
+                            </div>
+                            <div class="selection-card" data-value="nonveg">
+                                <span class="icon">🍗</span>
+                                <h4>Non-Veg</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label>Select Vehicle Type</label>
+                        <div class="selection-grid" id="busSelect">
+                            <div class="selection-card" data-value="standard">
+                                <span class="icon">🚌</span>
+                                <h4>Standard A/C</h4>
+                            </div>
+                            <div class="selection-card" data-value="premium">
+                                <span class="icon">🚐</span>
+                                <h4>Premium A/C</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <h3 class="section-heading"><span class="icon">📝</span> Additional Details</h3>
+                    
+                    <div class="form-group full-width">
+                        <label for="requests">Special Requests (Optional)</label>
+                        <textarea id="requests" name="requests" rows="4" placeholder="Any special requirements or preferences..."></textarea>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-lg">Continue</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Tamil Nadu Tours</h3>
+                    <p>Your trusted partner for exploring the beauty and culture of Tamil Nadu since 2011</p>
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">in</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#destinations">Destinations</a></li>
+                        <li><a href="index.html#tour-types">Tour Types</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 info@tntours.com</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>📍 Chennai, Tamil Nadu</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Tamil Nadu Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+</body>
+</html>

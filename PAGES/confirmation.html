@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - Tamil Nadu Tours</title>
+    <meta name="description" content="Your Tamil Nadu tour booking is confirmed!">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <style>
+        .confirmation-container {
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .success-animation {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+        .success-animation span {
+            font-size: 3.5rem;
+            color: white;
+        }
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .booking-id {
+            background: var(--light);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            display: inline-block;
+            margin: 1.5rem 0;
+            font-family: monospace;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+        .details-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .details-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-alt);
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--light-alt);
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-row .label {
+            color: var(--gray);
+        }
+        .detail-row .value {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="../IMG/logo.png" alt="Tamil Nadu Tours">
+                    TN Tours
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#destinations">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="sun">☀️</span>
+                        <span class="moon">🌙</span>
+                    </button>
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <a href="booking.html" class="btn">Plan Your Trip</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Booking Confirmed!</h1>
+            <p>Thank you for choosing Tamil Nadu Tours</p>
+        </div>
+    </section>
+
+    <section class="payment-section">
+        <div class="container">
+            <div class="confirmation-container">
+                <div class="success-animation">
+                    <span>✓</span>
+                </div>
+                
+                <h2 style="color: var(--secondary); margin-bottom: 0.5rem;">Booking Submitted Successfully!</h2>
+                <p style="color: var(--gray);">Our team will contact you shortly with the final quote</p>
+                
+                <div class="booking-id">
+                    Booking ID: <span id="bookingId">--</span>
+                </div>
+                
+                <div class="details-card">
+                    <h3>Booking Details</h3>
+                    <div class="detail-row">
+                        <span class="label">Name</span>
+                        <span class="value" id="confirmName">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Pickup Location</span>
+                        <span class="value" id="confirmPickup">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Destination</span>
+                        <span class="value" id="confirmDestination">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Travel Date</span>
+                        <span class="value" id="confirmDate">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Guests</span>
+                        <span class="value" id="confirmGuests">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Estimated Amount</span>
+                        <span class="value" id="confirmTotal">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Status</span>
+                        <span class="value" id="confirmPayment">Submitted</span>
+                    </div>
+                </div>
+                
+                <p style="color: var(--gray); font-size: 0.9rem; margin-top: 1rem;">
+                    📧 Our team will contact you within 24 hours with the final quote.
+                </p>
+                
+                <div class="action-buttons">
+                    <a href="index.html" class="btn">Back to Home</a>
+                    <a href="booking.html" class="btn btn-outline">Book Another Tour</a>
+                    <button class="btn" style="margin-top: 1rem;" onclick="downloadConfirmationPDF()">Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Tamil Nadu Tours</h3>
+                    <p>Your trusted partner for exploring the beauty and culture of Tamil Nadu since 2011</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#destinations">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📧 info@tntours.com</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>📍 Chennai, Tamil Nadu</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Tamil Nadu Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadConfirmationPDF() {
+            try {
+                const bookingData = JSON.parse(localStorage.getItem('bookingData') || '{}');
+                console.log('Booking data:', bookingData);
+                
+                const destinationNames = {
+                    madurai: 'Madurai', chennai: 'Chennai', thanjavur: 'Thanjavur',
+                    rameshwaram: 'Rameshwaram', kanyakumari: 'Kanyakumari',
+                    pondicherry: 'Pondicherry', mahabalipuram: 'Mahabalipuram',
+                    ooty: 'Ooty', kodaikanal: 'Kodaikanal'
+                };
+                const destName = destinationNames[bookingData.destination] || bookingData.destination;
+                
+                const hotelNames = { standard: 'Standard', '3star': 'Star Hotel', resort: 'Resort' };
+                const foodNames = { veg: 'Veg', nonveg: 'Non-Veg' };
+                const busNames = { standard: 'Standard A/C', premium: 'Premium A/C' };
+                
+                const dateStr = bookingData.checkin ? new Date(bookingData.checkin).toLocaleDateString('en-IN') : '--';
+                const guests = bookingData.guests || 0;
+                
+                const price = typeof calculatePrice === 'function' ? calculatePrice() : { total: 0 };
+                const total = '₹' + (price.total || 0).toLocaleString('en-IN');
+                
+                const htmlContent = `
+                    <div style="padding: 20px; font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                        <h1 style="color: #e63946; text-align: center;">Tour Booking Confirmed</h1>
+                        <p style="text-align: center; color: #666;">Booking ID: TN-${Date.now().toString().slice(-8)}</p>
+                        <hr>
+                        <h3>Booking Details</h3>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Name:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${bookingData.name || '--'}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Pickup Location:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${bookingData.pickupLocation || '--'}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Destination:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${destName}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Travel Date:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${dateStr}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Guests:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${guests} Guest${guests > 1 ? 's' : ''}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Hotel Type:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${hotelNames[bookingData.hotel] || '--'}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Food Type:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${foodNames[bookingData.food] || '--'}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Vehicle Type:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">${busNames[bookingData.bus] || '--'}</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd;"><strong>Status:</strong></td><td style="padding: 8px; border: 1px solid #ddd;">Submitted - Pending</td></tr>
+                            <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;"><strong>Estimated Amount:</strong></td><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">${total}</td></tr>
+                        </table>
+                        <p style="margin-top: 20px; color: #666; font-size: 12px;">* Our team will contact you within 24 hours with the final quote.</p>
+                    </div>
+                `;
+                
+                const container = document.createElement('div');
+                container.innerHTML = htmlContent;
+                document.body.appendChild(container);
+                
+                const opt = {
+                    margin: 10,
+                    filename: 'Tour_Confirmation_' + destName + '.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+                
+                html2pdf().set(opt).from(container).save().then(() => {
+                    document.body.removeChild(container);
+                });
+            } catch (err) {
+                console.error('PDF Error:', err);
+                alert('Error generating PDF: ' + err.message);
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConfirmationData();
+        });
+
+        function loadConfirmationData() {
+            const bookingData = JSON.parse(localStorage.getItem('bookingData') || '{}');
+            
+            if (!bookingData.name) {
+                window.location.href = 'booking.html';
+                return;
+            }
+
+            const bookingId = 'TN' + Date.now().toString().slice(-8);
+            document.getElementById('bookingId').textContent = bookingId;
+
+            const destinationNames = {
+                madurai: 'Madurai',
+                chennai: 'Chennai',
+                thanjavur: 'Thanjavur',
+                rameshwaram: 'Rameshwaram',
+                kanyakumari: 'Kanyakumari',
+                pondicherry: 'Pondicherry',
+                mahabalipuram: 'Mahabalipuram',
+                ooty: 'Ooty',
+                kodaikanal: 'Kodaikanal'
+            };
+
+            document.getElementById('confirmName').textContent = bookingData.name || '--';
+            
+            let pickupText = '--';
+            if (bookingData.pickupLocation) {
+                pickupText = bookingData.pickupLocation;
+                if (bookingData.pickupAddress) {
+                    pickupText += ' - ' + bookingData.pickupAddress;
+                }
+            }
+            document.getElementById('confirmPickup').textContent = pickupText;
+            
+            document.getElementById('confirmDestination').textContent = destinationNames[bookingData.destination] || bookingData.destination || '--';
+            
+            if (bookingData.checkin && bookingData.checkout) {
+                document.getElementById('confirmDate').textContent = 
+                    formatDate(bookingData.checkin) + ' - ' + formatDate(bookingData.checkout);
+            } else {
+                document.getElementById('confirmDate').textContent = '--';
+            }
+
+            const guests = parseInt(bookingData.guests) || 0;
+            document.getElementById('confirmGuests').textContent = guests + ' Guest' + (guests > 1 ? 's' : '');
+
+            document.getElementById('confirmPayment').textContent = 'Submitted - Pending';
+            
+            if (typeof calculatePrice === 'function') {
+                const price = calculatePrice();
+                document.getElementById('confirmTotal').textContent = '₹' + price.total.toLocaleString('en-IN');
+            } else {
+                document.getElementById('confirmTotal').textContent = '--';
+            }
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+    </script>
+</body>
+</html>
