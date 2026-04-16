@@ -52,93 +52,110 @@
 
     <section class="booking-section">
         <div class="container">
-            <div class="form-grid" style="max-width: 800px; margin: 0 auto;">
-                <div class="booking-form" style="width: 100%;">
-                    <h2 style="text-align: center; margin-bottom: 2rem;">Booking Summary</h2>
-                    
-                    <div class="summary-row">
-                        <span>Destination</span>
-                        <span id="summaryDestination">--</span>
+            <div class="submit-wrapper">
+                <div class="booking-card">
+                    <div class="booking-header">
+                        <h2>Booking Summary</h2>
+                        <p>Review your details before submitting</p>
                     </div>
                     
-                    <div class="summary-row">
-                        <span>Duration</span>
-                        <span id="summaryDuration">--</span>
+                    <div class="booking-details">
+                        <div class="detail-section">
+                            <h4><span class="detail-icon">📍</span> Trip Details</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Destination</span>
+                                    <span class="detail-value" id="summaryDestination">--</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Duration</span>
+                                    <span class="detail-value" id="summaryDuration">--</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Travel Date</span>
+                                    <span class="detail-value" id="summaryDates">--</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Guests</span>
+                                    <span class="detail-value" id="summaryGuests">--</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4><span class="detail-icon">🚐</span> Travel Info</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Pickup Location</span>
+                                    <span class="detail-value" id="summaryPickupLocation">--</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Distance</span>
+                                    <span class="detail-value" id="summaryDistance">--</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4><span class="detail-icon">🏨</span> Preferences</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Hotel Type</span>
+                                    <span class="detail-value" id="summaryHotel">--</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Food Type</span>
+                                    <span class="detail-value" id="summaryFood">--</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Vehicle Type</span>
+                                    <span class="detail-value" id="summaryBus">--</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="summary-row">
-                        <span>Travel Date</span>
-                        <span id="summaryDates">--</span>
+                    <div class="price-section">
+                        <h4><span class="detail-icon">💰</span> Price Breakdown</h4>
+                        <div class="price-list">
+                            <div class="price-row">
+                                <span>Hotel</span>
+                                <span id="summaryHotelCost">₹0</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Vehicle (Bus + Pickup)</span>
+                                <span id="summaryBusCost">₹0</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Food</span>
+                                <span id="summaryFoodCost">₹0</span>
+                            </div>
+                            <div class="price-row">
+                                <span>GST (5%)</span>
+                                <span id="summaryTaxes">₹0</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total Tour Price</span>
+                                <span id="summaryTotal">₹0</span>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="summary-row">
-                        <span>Guests</span>
-                        <span id="summaryGuests">--</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>Pickup Location</span>
-                        <span id="summaryPickupLocation">--</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>Distance</span>
-                        <span id="summaryDistance">--</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>Hotel Type</span>
-                        <span id="summaryHotel">--</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>Food Type</span>
-                        <span id="summaryFood">--</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>Vehicle Type</span>
-                        <span id="summaryBus">--</span>
-                    </div>
-                    
-                    <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid var(--gray-light);">
-                    
-                    <h3 style="margin-bottom: 1rem;">Estimated Price Breakdown</h3>
-                    
-                    <div class="summary-row">
-                        <span>Hotel</span>
-                        <span id="summaryHotelCost">₹0</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>Vehicle (Bus + Pickup)</span>
-                        <span id="summaryBusCost">₹0</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>Food</span>
-                        <span id="summaryFoodCost">₹0</span>
-                    </div>
-                    
-                    <div class="summary-row">
-                        <span>GST (5%)</span>
-                        <span id="summaryTaxes">₹0</span>
-                    </div>
-                    
-                    <div class="summary-row total">
-                        <span>Total Tour Price</span>
-                        <span id="summaryTotal">₹0</span>
-                    </div>
-                    
-                    <p style="text-align: center; margin-top: 1rem; color: var(--gray); font-size: 0.9rem;">
+                    <p class="price-note">
                         * This is an estimated price. Our team will contact you with the final quote.
                     </p>
                     
-                    <button class="btn btn-lg" style="width: 100%; margin-top: 1.5rem;" onclick="downloadPDF()">Download PDF</button>
-                    
-                    <button class="btn btn-lg" style="width: 100%; margin-top: 1rem; background: var(--primary);" onclick="submitBooking()">Submit Booking</button>
-                    
-                    <button class="btn" style="width: 100%; margin-top: 1rem; background: var(--gray);" onclick="window.location.href='booking.html'">Go Back</button>
+                    <div class="action-buttons">
+                        <button class="btn btn-lg" onclick="downloadPDF()">
+                            <span>📄</span> Download PDF
+                        </button>
+                        <button class="btn btn-lg btn-primary" onclick="submitBooking()">
+                            <span>✓</span> Submit Booking
+                        </button>
+                        <button class="btn btn-outline" onclick="window.location.href='booking.html'">
+                            ← Go Back
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
